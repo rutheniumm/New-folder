@@ -128,7 +128,8 @@ function playNote(x,cleaner)
 		end)
 	end
 	sh:Play()
-	delay(4, function() sh:Stop() sh:Destroy() end ) -- remove the audio in 4 seconds, enough time for it to play
+
+	task.delay(4, function() sh:Stop() sh:Destroy() end ) -- remove the audio in 4 seconds, enough time for it to play
 	note_was_played = true;
 end
 game:GetService("RunService").Heartbeat:Connect(function()
